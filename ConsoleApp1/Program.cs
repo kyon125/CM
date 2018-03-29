@@ -53,14 +53,19 @@ namespace ConsoleApp1
             int [] CM = { 173, 0, 179, 155, 183, 170, 163, 174, 165, 189, 177, 180, 154, 167, 170, 173, 165, 158, 180, 165, 153, 175, 162, 165, 0, 160, 165, 173, 164, 177, 177, 180, 170, 151, 176, 180, 168, 152, 666, 2147483647, 165, 155, 777, 173, 169, 170, 169, 171, 0, 170, 150, 160, 155, 164, 163, 165, 184, 165, 155, 0, 168, 160, 169, 0, 150, 163, 168, 173 };
 
             int girlCM = 0;
+            int girl = 0;
             for (int a = 0; a < Gender.Length; a++)
             {
-                if (Gender[a] == "女")
-                {
+                if (Gender[a] == "女" && CM[a] < 200 && CM[a] > 100)
+                {                    
+                    girl++;
                     girlCM += CM[a];
                 }
+                
             }
+            float girlCMavenger = (float)girlCM /(float)girl;
             Console.WriteLine("女生身高:" + girlCM);
+            Console.WriteLine("女生平均身高:" +girlCMavenger);
             Console.Read();
         }
     }
